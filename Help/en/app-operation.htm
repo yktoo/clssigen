@@ -1,0 +1,52 @@
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+  <title>Operation</title>
+  <link rel="stylesheet" type="text/css" href="../main.css">
+</head>
+<body bgcolor=white>
+<table width=100% cellpadding=0 cellspacing=0 border=0 class=main>
+<tr><td class=header><img src="../ssi-icon.gif" width=70 height=50 align=absmiddle> Client SSI Generator</td></tr>
+<tr><td class=hdrbound></td></tr>
+<tr><td class=content>
+  <h1>Operation</h1>
+  
+  <p align=justify><b>Client SSI Generator</b> is typically installed on the web designer's workplace (the separate folder recommended), and being
+    run on ready source-file set. The instructions for the program are being arranged as a <b>project</b>, which can be saved to a disk file with 
+    <b>.cssip</b> (client SSI project) extension. These instructions include:
+    <ul>
+      <li><b>Base HTML folder</b> - the root source folder for the whole site. The folder is the base for all absolute links (links of kind 
+        &quot;/file.ext&quot;)</li>.
+      <li><b>Output folder</b> - the root target folder for the generated site content. I recommend using disk mapped by using the <b>subst</b>
+        command, then all the links are actually point from the root filesystem's folder, eg:
+          <pre>
+                    subst i: C:\MyWebsite\Generated
+          </pre>
+          then you denote i:\ as an output folder.
+      </li>
+      <li><b>Optional run-upon-completion file</b> - you may opt to specify the file which will start automatically once generation is complete 
+        (eg, website start page). The file's name must be relative to the site's base (root) folder, eg: &quot;<b>music/new/myfile.html</b>&quot;.
+      </li>
+      <li><b>File set to process</b>. Once base HTML folder is specified the program displays file and folder list, from which you can check those you
+        wish to include in the final site. They might include HTML files, cascading stylesheets, (.CSS), scripts (.JS), images (.JPG, .GIF, .SWF) 
+        and all other. Notice that INCLUDE-files inselves (wearing <b>.ihtml</b> extensions in the examples) are <b>not required</b> to be included
+        since they're needed only on generation stage.</li>
+      <li><b>SSI-extensions</b> - the list of extensions considered to potentially contain SSI directives; these files are processed by the SSI-scanner.
+        All other files (from checked ones) are being copied verbatim, with no content analyzing.</li>
+    </ul>
+  <p align=justify>The program automatically creates all the folder hierarchy for target files; the only restriction is that the root output folder
+    must exist before generation may be started.
+  <p align=justify>The <b>include</b> directives format is as following:
+    <pre>      
+    <font color=#00a000><b>&lt;!--#include virtual=</font><font color=#000080>"relative_path/filename.ext"</font><font color=#00a000> --&gt;</b></font>
+    <font color=#00a000><b>&lt;!--#include virtual=</font><font color=#000080>"../relative_path/filename.ext"</font><font color=#00a000> --&gt;</b></font>
+    <font color=#00a000><b>&lt;!--#include virtual=</font><font color=#000080>"/absolute_path/filename.ext"</font><font color=#00a000> --&gt;</b></font>
+    </pre>
+  <p>etc.
+  
+  <hr width=40%>
+  <p class=copyright>Copyright &copy;2001-2004 <a href="http://www.dk-soft.org/" target=_blank>DK Software</a>. All rights reserved.
+</td></tr>
+</table>
+</body>
+</html>

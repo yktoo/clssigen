@@ -1,0 +1,21 @@
+[OPTIONS]
+Compatibility=1.1 or later
+Compiled file=cssigen-en.chm
+Contents file=cssigen.hhc
+Default topic=index.htm
+Display compile progress=Yes
+Language=0x409 Английский (США)
+Title=Client SSI Generator help
+
+
+[FILES]
+app-purpose.htm
+index.htm
+app-whatis-ssi.htm
+app-updates.htm
+app-legal.htm
+app-operation.htm
+app-rev-history.htm
+
+[INFOTYPES]
+

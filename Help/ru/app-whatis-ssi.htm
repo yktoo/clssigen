@@ -1,0 +1,85 @@
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=windows-1251">
+  <title>Что такое SSI?</title>
+  <link rel="stylesheet" type="text/css" href="../main.css">
+</head>
+<body bgcolor=white>
+<table width=100% cellpadding=0 cellspacing=0 border=0 class=main>
+<tr><td class=header><img src="../ssi-icon.gif" width=70 height=50 align=absmiddle> Client SSI Generator</td></tr>
+<tr><td class=hdrbound></td></tr>
+<tr><td class=content>
+  <h1>Что такое SSI?</h1>
+  
+  <p align=justify><b>SSI</b> - это Server-Side Includes, или включение файлов на стороне сервера, - механизм, позволяющий создавать стандартные шаблоны
+    HTML-кода и включать их в выходной HTML-файл, отсылаемый клиенту, автоматически при обращении последнего к файлу. Реализуется он с помощью <i>директив</i>,
+    вставляемых в исходную HTML-страницу. Такой механизм существенно облегчает работы по смене дизайна сервера, так как заменяются только шаблоны, а сами
+    файлы контента остаются неизменными.
+  <p align=justify>В случае недоступности серверного SSI-сервиса можно применить &quot;клиентский&quot;, когда Web-дизайнер на локальном компьютере имитирует
+    обработку SSI-содержимого для всех файлов сайта, получая таким образом копию полного набора файлов, но с заменёнными директивами <b>include</b>.
+  <p align=justify>Также его можно использовать, когда сервер вообще не применяется в процессе получения файлов: например, при написании файлов справки в
+    формате HTML (CHM-файлы).
+    
+  <p align=justify><b><u>Простой пример:</b></u>
+  <center>
+  <table border=0 cellpadding=10 cellspacing=0 bgcolor=#ffffe0 width=500><tr><td>
+    <p align=justify><font color=#600000>Файл <b>index.html</b></font>:
+    <pre>      
+    <font color=#00a000><b>&lt;!--#include virtual="top.ihtml" --&gt;</b></font>
+    Hello World
+    <font color=#00a000><b>&lt;!--#include virtual="bottom.ihtml" --&gt;</b></font>
+    </pre>
+  </td></tr></table>
+  <p>
+  <table border=0 cellpadding=10 cellspacing=0 bgcolor=#ffffe0 width=500><tr><td>
+    <p align=justify><font color=#600000>Файл <b>top.ihtml</b></font>:
+    <pre>      
+    <b>&lt;html&gt;</b>
+    <b>&lt;head&gt;&lt;title&gt;</b>My website<b>&lt;/title&gt;&lt;/head&gt;</b>
+    <b>&lt;body&gt;</b>
+    <b>&lt;center&gt;</b>
+    </pre>
+  </td></tr></table>
+  <p>
+  <table border=0 cellpadding=10 cellspacing=0 bgcolor=#ffffe0 width=500><tr><td>
+    <p align=justify><font color=#600000>Файл <b>bottom.ihtml</b></font>:
+    <pre>      
+    <b>&lt;/center&gt;</b>
+    <b>&lt;/body&gt;</b>
+    <b>&lt;/html&gt;</b>
+    </pre>
+  </td></tr></table>
+  </center>
+  
+  <p align=justify>После обработки файла <b>index.html</b> на SSI-сервере или программой <b>Client SSI Generator</b> директивы <b>&lt;include&gt;</b> будут
+    заменены на содержимое указанных файлов, и результирующий <b>index.html</b> будет таким:
+  <center>
+  <table border=0 cellpadding=10 cellspacing=0 bgcolor=#ffffe0 width=500><tr><td>
+    <pre>      
+    <b>&lt;html&gt;</b>
+    <b>&lt;head&gt;&lt;title&gt;</b>My website<b>&lt;/title&gt;&lt;/head&gt;</b>
+    <b>&lt;body&gt;</b>
+    <b>&lt;center&gt;</b>
+    Hello World
+    <b>&lt;/center&gt;</b>
+    <b>&lt;/body&gt;</b>
+    <b>&lt;/html&gt;</b>
+    </pre>
+  </td></tr></table>
+  </center>
+  
+  <p align=justify>Очевидно, что простой заменой, скажем, <b>top.ihtml</b>, и перегенерацией файлов модифицируется множество использующих его HTML-страниц.
+    Очень удобно это при смене дизайна всего сайта целиком. Вот примеры сайтов, целиком построенных на SSI-шаблонах и обработанных <b>Client SSI Generator</b>:
+    <ul>
+      <li><a href="http://www.dk-soft.org/" target=_blank>www.dk-soft.org</a></li>
+      <li><a href="http://phoa.narod.ru/" target=_blank>phoa.narod.ru</a></li>
+      <li><a href="http://radiolaria.narod.ru/" target=_blank>radiolaria.narod.ru</a></li>
+    </ul>
+  <p align=justify>В сочетании с таблицами стилей (CSS) такой метод может оказаться весьма и весьма удобным.
+  
+  <hr width=40%>
+  <p class=copyright>Авторское право &copy;2001-2004 <a href="http://www.dk-soft.org/" target=_blank>DK Software</a>. Все права сохранены.
+</td></tr>
+</table>
+</body>
+</html>

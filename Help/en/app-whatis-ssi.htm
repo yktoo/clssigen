@@ -1,0 +1,86 @@
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+  <title>What is SSI?</title>
+  <link rel="stylesheet" type="text/css" href="../main.css">
+</head>
+<body bgcolor=white>
+<table width=100% cellpadding=0 cellspacing=0 border=0 class=main>
+<tr><td class=header><img src="../ssi-icon.gif" width=70 height=50 align=absmiddle> Client SSI Generator</td></tr>
+<tr><td class=hdrbound></td></tr>
+<tr><td class=content>
+  <h1>What is SSI?</h1>
+  
+  <p align=justify><b>SSI</b> stands for Server-Side Includes, - the mechanism allowing to create standardized templates of HTML code and insert them
+    in the output HTML file - the file being sent to the HTTP client; this work is done automatically upon client request. This behaviour is
+    implemented by using <i>directives</i> being inserted in the source HTML page. Such mechanism makes redesigning websites much easier because you
+    have only to alter templates while the content files themselves are being left intact.
+  <p align=justify>In cases &quot;server SSI&quot; is unavailable you can use &quot;client SSI&quot;, when the web-designer locally processes 
+    SSI-ready content for each file of the site thus getting the copy of the source content but with <b>include</b> directives replaced with the
+    corresponding files' content.
+  <p align=justify>Also it is usable when no server involved in HTML deliverance at all: eg when designing HTML help files (CHM-files).
+    
+  <p align=justify><b><u>The simple example:</b></u>
+  <center>
+  <table border=0 cellpadding=10 cellspacing=0 bgcolor=#ffffe0 width=500><tr><td>
+    <p align=justify><font color=#600000><b>index.html</b> file</font>:
+    <pre>      
+    <font color=#00a000><b>&lt;!--#include virtual="top.ihtml" --&gt;</b></font>
+    Hello World
+    <font color=#00a000><b>&lt;!--#include virtual="bottom.ihtml" --&gt;</b></font>
+    </pre>
+  </td></tr></table>
+  <p>
+  <table border=0 cellpadding=10 cellspacing=0 bgcolor=#ffffe0 width=500><tr><td>
+    <p align=justify><font color=#600000>Ôàéë <b>top.ihtml</b></font>:
+    <pre>      
+    <b>&lt;html&gt;</b>
+    <b>&lt;head&gt;&lt;title&gt;</b>My website<b>&lt;/title&gt;&lt;/head&gt;</b>
+    <b>&lt;body&gt;</b>
+    <b>&lt;center&gt;</b>
+    </pre>
+  </td></tr></table>
+  <p>
+  <table border=0 cellpadding=10 cellspacing=0 bgcolor=#ffffe0 width=500><tr><td>
+    <p align=justify><font color=#600000><b>bottom.ihtml</b> file</font>:
+    <pre>      
+    <b>&lt;/center&gt;</b>
+    <b>&lt;/body&gt;</b>
+    <b>&lt;/html&gt;</b>
+    </pre>
+  </td></tr></table>
+  </center>
+  
+  <p align=justify>After the <b>index.html</b> file is processed by the SSI-server or by <b>Client SSI Generator</b> software <b>&lt;include&gt;</b>
+    directives become replaced with the denoted files' content so the final <b>index.html</b> looks as following:
+  <center>
+  <table border=0 cellpadding=10 cellspacing=0 bgcolor=#ffffe0 width=500><tr><td>
+    <pre>      
+    <b>&lt;html&gt;</b>
+    <b>&lt;head&gt;&lt;title&gt;</b>My website<b>&lt;/title&gt;&lt;/head&gt;</b>
+    <b>&lt;body&gt;</b>
+    <b>&lt;center&gt;</b>
+    Hello World
+    <b>&lt;/center&gt;</b>
+    <b>&lt;/body&gt;</b>
+    <b>&lt;/html&gt;</b>
+    </pre>
+  </td></tr></table>
+  </center>
+  
+  <p align=justify>Obviously, the simple modification of <b>top.ihtml</b> followed by the re-processing of the files updates all the pages mentioning
+    it. This is extremely convenient for changing the design of the whole site &quot;by one click&quot;. Here are examples of the sites which are
+    completely built on SSI-templates processed with <b>Client SSI Generator</b>:
+    <ul>
+      <li><a href="http://www.dk-soft.org/" target=_blank>www.dk-soft.org</a></li>
+      <li><a href="http://phoa.narod.ru/" target=_blank>phoa.narod.ru</a></li>
+      <li><a href="http://radiolaria.narod.ru/" target=_blank>radiolaria.narod.ru</a></li>
+    </ul>
+  <p align=justify>This method appears useful in conjunction with using the Cascaded Style Sheets (CSS) technology.
+  
+  <hr width=40%>
+  <p class=copyright>Copyright &copy;2001-2004 <a href="http://www.dk-soft.org/" target=_blank>DK Software</a>. All rights reserved.
+</td></tr>
+</table>
+</body>
+</html>
