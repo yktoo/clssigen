@@ -685,7 +685,6 @@ object fMain: TfMain
         Header.Font.Style = []
         Header.MainColumn = -1
         Header.Options = [hoColumnResize, hoDrag]
-        ParentBackground = False
         TabOrder = 0
         TreeOptions.PaintOptions = [toShowButtons, toShowDropmark, toShowTreeLines, toThemeAware, toUseBlendedImages, toAlwaysHideSelection]
         OnFreeNode = tvLogFreeNode

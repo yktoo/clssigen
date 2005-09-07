@@ -35,7 +35,6 @@ inherited dSettings: TdSettings
       Header.Font.Style = []
       Header.MainColumn = 1
       Header.Options = [hoAutoResize, hoColumnResize, hoDrag, hoShowSortGlyphs, hoVisible]
-      ParentBackground = False
       PopupMenu = pmAssociations
       TabOrder = 0
       TreeOptions.MiscOptions = [toAcceptOLEDrop, toCheckSupport, toEditable, toFullRepaintOnResize, toGridExtensions, toInitOnSave, toToggleOnDblClick, toWheelPanning]
